@@ -1,0 +1,82 @@
+Colour Theme: Catpuccin
+
+Theme: 
+{
+  "primarylight": "#f2cdcd",
+  "primary": "#f2cdcd",
+  "primarydark": "#f5c2e7",
+  "successlight": "#a6e3a1",
+  "success": "#a6e3a1",
+  "successdark": "#a6e3a1",
+  "errorlight": "#eba0ac",
+  "error": "#f38ba8",
+  "errordark": "#f38ba8",
+  "secondarylight": "#9399b2",
+  "secondary": "#7f849c",
+  "secondarydark": "#6c7086",
+  "warninglight": "#f9e2af",
+  "warning": "#f9e2af",
+  "warningdark": "#f9e2af",
+  "infolight": "#89b4fa",
+  "info": "#89b4fa",
+  "infodark": "#89b4fa",
+  "welllight": "#45475a",
+  "well": "#313244",
+  "white": "#cdd6f4",
+  "black": "#11111b",
+  "hp": "#f38ba8",
+  "money": "#f9e2af",
+  "hack": "#a6e3a1",
+  "combat": "#a6adc8",
+  "cha": "#cba6f7",
+  "int": "#89b4fa",
+  "rep": "#bac2de",
+  "disabled": "#eba0ac",
+  "backgroundprimary": "#1e1e2e",
+  "backgroundsecondary": "#181825",
+  "button": "#313244",
+  "maplocation": "#ffffff",
+  "bnlvl0": "#ffff00",
+  "bnlvl1": "#ff0000",
+  "bnlvl2": "#48d1cc",
+  "bnlvl3": "#0000ff"
+}
+
+Style Editor:
+
+{ 
+"Font-Family: Monaspace Radon, "Courier New", monospace"
+"Line Height: 1.5"
+}
+Script Editor:
+{
+  "common": {
+    "accent": "A5FAEE",
+    "bg": "1E1E2E",
+    "fg": "FF9CFA"
+  },
+  "syntax": {
+    "tag": "FC8B8F",
+    "entity": "A671D1",
+    "string": "F2CDCD",
+    "regexp": "F2B58A",
+    "markup": "BFE3A1",
+    "keyword": "FDF4A5",
+    "comment": "BABABA",
+    "constant": "89B4FA",
+    "error": "F38BA8"
+  },
+  "ui": {
+    "line": "313244",
+    "panel": {
+      "bg": "181825",
+      "selected": "313244",
+      "border": "F2CDCD"
+    },
+    "selection": {
+      "bg": "F9E2AF66"
+    }
+  },
+  "base": "vs-dark",
+  "inherit": true
+}
