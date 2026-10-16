@@ -1,0 +1,13 @@
+
+Option 2: The Failproof Breakpoint Method (No Script Required)
+
+If the latest security patch completely isolates the scripting layer from the game's internal routing functions, you can activate it through the game's engine inspector seamlessly:
+1. In the top-left menu of Bitburner, click Debug -> Activate (or press F12 / Ctrl+Shift+I) to open the Web DevConsole.
+2. Click on the Sources tab at the top.
+3. In the left-hand folder tree, navigate to: top -> webpack:// -> src -> ui -> GameRoot.tsx.
+4. Look for a line containing a switch statement looking at pages (usually switch (pageWithContext.page) around line 198–204).
+5. Click the line number to place a blue breakpoint dot next to it.
+6. Go back to the game window and click any button on your left menu sidebar (like City or Travel). The game will pause execution.
+7. Look at the right-side DevTools panel under Scope -> Local -> pageWithContext.
+8. Double-click the value of page (which might say "City") and change it manually to "Dev" (with quotation marks).
+9. Click the blue Play/Resume arrow button at the top of DevTools to unpause.
