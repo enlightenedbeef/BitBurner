@@ -1,8 +1,8 @@
-/** @param {NS} ns **/
+/** @param {NS} ns */
 export async function main(ns) {
     // Defines the "target server", which is the server
     // at we're going to hack. In this case, it's "n00dles"
-    const target = "n00dles";
+    const target = "joesguns";
 
     // Defines how much money a server should have before we hack it.
     // In this case, it is set to the maximum amount of money.
