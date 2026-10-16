@@ -1,5 +1,5 @@
 Port = "12525"
-Directory = "./"
+Directory = "./Scripts/"
 FileScanInterval = 1000
 
 [FilePatterns]

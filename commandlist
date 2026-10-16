@@ -1,0 +1,50 @@
+help
+[01:41:35 16-10-2026] Type 'help name' to learn more about the command
+[01:41:35 16-10-2026]
+[01:41:35 16-10-2026]     alias [-g] [name="value"]        Create or display Terminal aliases
+[01:41:35 16-10-2026]     analyze                          Get information about the current machine
+[01:41:35 16-10-2026]     backdoor                         Install a backdoor on the current machine
+[01:41:35 16-10-2026]     buy [-l/-a/program]              Purchase a program through the Dark Web
+[01:41:35 16-10-2026]     cat [file]                       Display the contents of a file
+[01:41:35 16-10-2026]     cd [dir]                         Change to a new directory
+[01:41:35 16-10-2026]     changelog                        Display changelog
+[01:41:35 16-10-2026]     check [script] [args...]         Print a script's logs to Terminal
+[01:41:35 16-10-2026]     clear                            Clear all text on the terminal
+[01:41:35 16-10-2026]     cls                              See 'clear' command
+[01:41:35 16-10-2026]     connect [hostname]               Connects to a remote server
+[01:41:35 16-10-2026]     cp [src] [dest]                  Copy a file
+[01:41:35 16-10-2026]     download [script/text file]      Downloads scripts or text files to your computer
+[01:41:35 16-10-2026]     upload [dir]                     Upload scripts or text files from your computer
+[01:41:35 16-10-2026]     expr [math expression]           Evaluate a mathematical expression
+[01:41:35 16-10-2026]     free                             Check the machine's memory (RAM) usage
+[01:41:35 16-10-2026]     grep [opts]... pattern [file]... Search for PATTERN (string/regular expression) in each FILE and print results to terminal
+[01:41:35 16-10-2026]          [-O] [target file]
+[01:41:35 16-10-2026]     grow                             Spoof money in a servers bank account, increasing the amount available.
+[01:41:35 16-10-2026]     hack                             Hack the current machine
+[01:41:35 16-10-2026]     help [command]                   Display this help text, or the help text for a command
+[01:41:35 16-10-2026]     history [-c]                     Display the terminal history
+[01:41:35 16-10-2026]     home                             Connect to home computer
+[01:41:35 16-10-2026]     hostname                         Displays the hostname of the machine
+[01:41:35 16-10-2026]     ipaddr                           Displays the IP address of the machine
+[01:41:35 16-10-2026]     kill [script/pid] [args...]      Stops the specified script on the current server
+[01:41:35 16-10-2026]     killall                          Stops all running scripts on the current machine
+[01:41:35 16-10-2026]     ls [dir] [-l] [-h] [-g pattern]  Displays all files on the machine
+[01:41:35 16-10-2026]     lscpu                            Displays the number of CPU cores on the machine
+[01:41:35 16-10-2026]     mem [script] [-t n]              Displays the amount of RAM required to run the script
+[01:41:35 16-10-2026]     mv [src] [dest]                  Move/rename a text or script file
+[01:41:35 16-10-2026]     nano [files...]                  Text editor - Open up and edit one or more scripts or text files
+[01:41:35 16-10-2026]     ps                               Display all scripts that are currently running
+[01:41:35 16-10-2026]     rm [OPTIONS]... [FILE]...        Delete a file from the server
+[01:41:35 16-10-2026]     run [script] [-t n] [--tail]     Run a program, a script, or a coding contract
+[01:41:35 16-10-2026]         [--ram-override n]
+[01:41:35 16-10-2026]         [--temporary] [args...]
+[01:41:35 16-10-2026]     scan                             Prints all immediately-available network connections
+[01:41:35 16-10-2026]     scan-analyze [d] [-a]            Prints info for all servers up to d nodes away
+[01:41:35 16-10-2026]     scp [files...] [server]          Copies scripts, text files, or .lit files to a destination server
+[01:41:35 16-10-2026]     sudov                            Shows whether you have root access on this computer
+[01:41:35 16-10-2026]     tail [script/pid] [args...]      Displays dynamic logs for the specified script
+[01:41:35 16-10-2026]     top                              Displays all running scripts and their RAM usage
+[01:41:35 16-10-2026]     unalias [alias name]             Deletes the specified alias
+[01:41:35 16-10-2026]     vim [files...]                   Text editor - Open up and edit one or more scripts or text files in vim mode
+[01:41:35 16-10-2026]     weaken                           Reduce the security of the current machine
+[01:41:35 16-10-2026]     wget [url] [target file]         Retrieves code/text from a web server
