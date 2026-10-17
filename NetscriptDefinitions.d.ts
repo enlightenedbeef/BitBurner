@@ -4,11 +4,11 @@
 export type _ValueOf<T> = T[keyof T];
 
 /** @public */
-type SuccessResult<T extends object> = { success: true; message?: string } & T;
+export type SuccessResult<T extends object> = { success: true; message?: string } & T;
 /** @public */
-type FailureResult = { success: false; message: string };
+export type FailureResult = { success: false; message: string };
 /** @public */
-type Result<T extends object = object> = SuccessResult<T> | FailureResult;
+export type Result<T extends object = object> = SuccessResult<T> | FailureResult;
 
 /** All netscript definitions */
 
@@ -16,7 +16,7 @@ type Result<T extends object = object> = SuccessResult<T> | FailureResult;
  * Metadata of a file
  * @public
  */
-interface FileMetadata {
+export interface FileMetadata {
   /** Time of Access */
   atime: number;
   /** Time of Modification */
@@ -26,13 +26,13 @@ interface FileMetadata {
 }
 
 /** @public */
-interface HP {
+export interface HP {
   current: number;
   max: number;
 }
 
 /** @public */
-interface Skills {
+export interface Skills {
   hacking: number;
   strength: number;
   defense: number;
@@ -43,13 +43,13 @@ interface Skills {
 }
 
 /** @public */
-type ScriptArg = string | number | boolean;
+export type ScriptArg = string | number | boolean;
 
 /** @public */
-type FilenameOrPID = number | string;
+export type FilenameOrPID = number | string;
 
 /** @public */
-interface Person {
+export interface Person {
   hp: HP;
   skills: Skills;
   exp: Skills;
@@ -58,7 +58,7 @@ interface Person {
 }
 
 /** @public */
-interface Player extends Person {
+export interface Player extends Person {
   money: number;
   numPeopleKilled: number;
   entropy: number;
@@ -70,7 +70,7 @@ interface Player extends Person {
 }
 
 /** @public */
-interface SleevePerson extends Person {
+export interface SleevePerson extends Person {
   /** Number 0-100 Experience earned and shared is multiplied with shock% before sync% */
   shock: number;
   /** Number 1-100 Experience earned by this sleeve and shared with the player is multiplied with sync% after shock% */
@@ -83,7 +83,7 @@ interface SleevePerson extends Person {
 
 /** Various info about resets
  * @public */
-interface ResetInfo {
+export interface ResetInfo {
   /** Numeric timestamp (from Date.now()) of last augmentation reset */
   lastAugReset: number;
   /** Numeric timestamp (from Date.now()) of last BitNode reset */
@@ -107,7 +107,7 @@ interface ResetInfo {
 }
 
 /** @public */
-interface MoneySource {
+export interface MoneySource {
   bladeburner: number;
   casino: number;
   class: number;
@@ -131,13 +131,13 @@ interface MoneySource {
 }
 
 /** @public */
-interface MoneySources {
+export interface MoneySources {
   sinceInstall: MoneySource;
   sinceStart: MoneySource;
 }
 
 /** @public */
-interface Multipliers {
+export interface Multipliers {
   /** Multiplier to hacking skill */
   hacking: number;
   /** Multiplier to strength skill */
@@ -203,7 +203,7 @@ interface Multipliers {
 }
 
 /** @public */
-interface TailProperties {
+export interface TailProperties {
   /** X-coordinate of the log window */
   x: number;
   /** Y-coordinate of the log window */
@@ -228,7 +228,7 @@ interface TailProperties {
  *
  * Use React.createElement to make the ReactElement type, see {@link https://react.dev/reference/react/createElement#creating-an-element-without-jsx | creating an element without jsx} from the official React documentation.
  */
-type ReactNode = ReactElement | string | number | null | undefined | boolean | ReactNode[];
+export type ReactNode = ReactElement | string | number | null | undefined | boolean | ReactNode[];
 
 /**
  * @public
@@ -236,14 +236,14 @@ type ReactNode = ReactElement | string | number | null | undefined | boolean | R
  * Use React.createElement to make these.
  * See {@link https://react.dev/reference/react/createElement#creating-an-element-without-jsx | creating an element without jsx} from the official React documentation.
  */
-interface ReactElement {
+export interface ReactElement {
   type: string | ((props: any) => ReactElement | null) | (new (props: any) => object);
   props: any;
   key: string | number | null;
 }
 
 /** @public */
-interface RunningScript {
+export interface RunningScript {
   /** Arguments the script was called with */
   args: ScriptArg[];
   /**
@@ -311,7 +311,7 @@ interface RunningScript {
 }
 
 /** @public */
-interface RunOptions {
+export interface RunOptions {
   /** Number of threads that the script will run with, defaults to 1 */
   threads?: number;
   /** Whether this script is excluded from saves, defaults to false */
@@ -340,7 +340,7 @@ interface RunOptions {
 }
 
 /** @public */
-interface SpawnOptions extends RunOptions {
+export interface SpawnOptions extends RunOptions {
   /**
    * Number of milliseconds to delay before spawning script, defaults to 10000 (10s).
    * Must be a non-negative integer. If 0, the script will be spawned synchronously.
@@ -349,7 +349,7 @@ interface SpawnOptions extends RunOptions {
 }
 
 /** @public */
-interface RecentScript extends RunningScript {
+export interface RecentScript extends RunningScript {
   /** Timestamp of when the script was killed */
   timeOfDeath: Date;
 }
@@ -358,7 +358,7 @@ interface RecentScript extends RunningScript {
  * Data representing the internal values of a crime.
  * @public
  */
-interface CrimeStats {
+export interface CrimeStats {
   /** Number representing the difficulty of the crime. Used for success chance calculations */
   difficulty: number;
   /** Amount of karma lost for successfully committing this crime */
@@ -403,7 +403,7 @@ interface CrimeStats {
  * Options to affect the behavior of {@link NS.hack | hack}, {@link NS.grow | grow}, and {@link NS.weaken | weaken}.
  * @public
  */
-interface BasicHGWOptions {
+export interface BasicHGWOptions {
   /** Number of threads to use for this function.
    * Must be less than or equal to the number of threads the script is running with.
    * Accepts positive non integer values.
@@ -421,7 +421,7 @@ interface BasicHGWOptions {
  * Affects the behavior of {@link NS.scan | scan}, {@link Cloud.getServerNames | getServerNames}, and {@link Singularity.getCurrentServer | getCurrentServer}
  * @public
  */
-interface HostReturnOptions {
+export interface HostReturnOptions {
   /** If set to `true`, returns IP addresses instead of hostnames. Defaults to `false`. */
   returnByIP?: boolean;
 }
@@ -430,7 +430,7 @@ interface HostReturnOptions {
  * Return value of {@link Sleeve.getSleevePurchasableAugs | getSleevePurchasableAugs}
  * @public
  */
-interface AugmentPair {
+export interface AugmentPair {
   /** augmentation name */
   name: string;
   /** augmentation cost */
@@ -438,16 +438,16 @@ interface AugmentPair {
 }
 
 /** @public */
-type PositionEnumType = {
+export type PositionEnumType = {
   Long: "L";
   Short: "S";
 };
 
 /** @public */
-type PositionType = _ValueOf<PositionEnumType>;
+export type PositionType = _ValueOf<PositionEnumType>;
 
 /** @public */
-type OrderEnumType = {
+export type OrderEnumType = {
   LimitBuy: "Limit Buy Order";
   LimitSell: "Limit Sell Order";
   StopBuy: "Stop Buy Order";
@@ -455,12 +455,12 @@ type OrderEnumType = {
 };
 
 /** @public */
-type OrderType = _ValueOf<OrderEnumType>;
+export type OrderType = _ValueOf<OrderEnumType>;
 
 /**
  * @public
  */
-interface StockOrder {
+export interface StockOrder {
   /** Number of shares */
   shares: number;
   /** Price per share */
@@ -473,7 +473,7 @@ interface StockOrder {
 
 /** Constants used for the stock market game mechanic.
  * @public */
-interface StockMarketConstants {
+export interface StockMarketConstants {
   /** Normal time in ms between stock market updates */
   msPerStockUpdate: number;
   /** Minimum time in ms between stock market updates if there is stored offline/bonus time */
@@ -496,7 +496,7 @@ interface StockMarketConstants {
  * A single process on a server.
  * @public
  */
-interface ProcessInfo {
+export interface ProcessInfo {
   /** Script name. */
   filename: string;
   /** Number of threads script is running with */
@@ -513,7 +513,7 @@ interface ProcessInfo {
  * Hack related multipliers.
  * @public
  */
-interface HackingMultipliers {
+export interface HackingMultipliers {
   /** Player's hacking chance multiplier. */
   chance: number;
   /** Player's hacking speed multiplier. */
@@ -528,7 +528,7 @@ interface HackingMultipliers {
  * Hacknet related multipliers.
  * @public
  */
-interface HacknetMultipliers {
+export interface HacknetMultipliers {
   /** Player's hacknet production multiplier */
   production: number;
   /** Player's hacknet purchase cost multiplier */
@@ -545,7 +545,7 @@ interface HacknetMultipliers {
  * Hacknet node related constants
  * @public
  */
-interface HacknetNodeConstants {
+export interface HacknetNodeConstants {
   /** Amount of money gained per level */
   MoneyGainPerLevel: number;
   /** Base cost for a new node */
@@ -576,7 +576,7 @@ interface HacknetNodeConstants {
  * Hacknet server related constants
  * @public
  */
-interface HacknetServerConstants {
+export interface HacknetServerConstants {
   /** Number of hashes calculated per level */
   HashesPerLevel: number;
   /** Base cost for a new server */
@@ -685,7 +685,7 @@ export interface Server {
  * All multipliers affecting the difficulty of the current challenge.
  * @public
  */
-interface BitNodeMultipliers {
+export interface BitNodeMultipliers {
   /** Influences how quickly the player's agility level (not exp) scales */
   AgilityLevelMultiplier: number;
   /** Influences the base cost to purchase an augmentation. */
@@ -807,7 +807,7 @@ interface BitNodeMultipliers {
  * Object representing all the values related to a hacknet node.
  * @public
  */
-interface NodeStats {
+export interface NodeStats {
   /** Node's name */
   name: string;
   /** Node's level */
@@ -831,7 +831,7 @@ interface NodeStats {
 }
 
 /** @public */
-interface SourceFileLvl {
+export interface SourceFileLvl {
   /** The number of the source file */
   n: number;
   /** The level of the source file */
@@ -842,7 +842,7 @@ interface SourceFileLvl {
  * Bladeburner current action.
  * @public
  */
-interface BladeburnerCurAction {
+export interface BladeburnerCurAction {
   /** Type of Action */
   type: string;
   /** Name of Action */
@@ -853,7 +853,7 @@ interface BladeburnerCurAction {
  * Gang general info.
  * @public
  */
-interface GangGenInfo {
+export interface GangGenInfo {
   /** Name of faction that the gang belongs to ("Slum Snakes", etc.) */
   faction: FactionName;
   /** Indicating whether or not it's a hacking gang */
@@ -885,7 +885,7 @@ interface GangGenInfo {
 }
 
 /** @public */
-interface GangOtherInfoObject {
+export interface GangOtherInfoObject {
   /** Gang power */
   power: number;
   /** Gang territory, in the range 0-1 */
@@ -896,7 +896,7 @@ interface GangOtherInfoObject {
  * Object representing data representing a gang member task.
  * @public
  */
-interface GangTaskStats {
+export interface GangTaskStats {
   /** Task name */
   name: string;
   /** Task Description */
@@ -933,7 +933,7 @@ interface GangTaskStats {
  * Object representing data representing a gang member equipment.
  * @public
  */
-interface EquipmentStats {
+export interface EquipmentStats {
   /** Strength multiplier */
   str?: number;
   /** Defense multiplier */
@@ -949,7 +949,7 @@ interface EquipmentStats {
 }
 
 /** @public */
-interface GangTerritory {
+export interface GangTerritory {
   /** Money gain impact on task scaling */
   money: number;
   /** Respect gain impact on task scaling */
@@ -958,7 +958,7 @@ interface GangTerritory {
   wanted: number;
 }
 /** @public */
-interface GangMemberExpGain {
+export interface GangMemberExpGain {
   /** Hack EXP gain for a member after a given task*/
   hack_exp: number;
   /** Str EXP gain for a member after a given task*/
@@ -974,7 +974,7 @@ interface GangMemberExpGain {
 }
 
 /** @public */
-interface GangMemberInfo {
+export interface GangMemberInfo {
   /** Name of the gang member */
   name: string;
   /** Currently assigned task */
@@ -1066,7 +1066,7 @@ interface GangMemberInfo {
 }
 
 /** @public */
-interface GangMemberInstall {
+export interface GangMemberInstall {
   /** Factor by which the hacking ascension multiplier was decreased (newMult / oldMult) */
   hack: number;
   /** Factor by which the strength ascension multiplier was decreased (newMult / oldMult) */
@@ -1082,7 +1082,7 @@ interface GangMemberInstall {
 }
 
 /** @public */
-interface GangMemberAscension {
+export interface GangMemberAscension {
   /** Amount of respect lost from ascending */
   respect: number;
   /** Factor by which the hacking ascension multiplier was increased (newMult / oldMult) */
@@ -1100,7 +1100,7 @@ interface GangMemberAscension {
 }
 
 /** @public */
-interface SleeveBladeburnerTask extends BaseTask {
+export interface SleeveBladeburnerTask extends BaseTask {
   type: "BLADEBURNER";
   actionType: "General" | "Contracts";
   actionName: string;
@@ -1110,20 +1110,20 @@ interface SleeveBladeburnerTask extends BaseTask {
 }
 
 /** @public */
-interface SleeveClassTask extends BaseTask {
+export interface SleeveClassTask extends BaseTask {
   type: "CLASS";
   classType: UniversityClassType | GymType;
   location: LocationName;
 }
 
 /** @public */
-interface SleeveCompanyTask extends BaseTask {
+export interface SleeveCompanyTask extends BaseTask {
   type: "COMPANY";
   companyName: CompanyName;
 }
 
 /** @public */
-interface SleeveCrimeTask extends BaseTask {
+export interface SleeveCrimeTask extends BaseTask {
   type: "CRIME";
   crimeType: CrimeType;
   cyclesWorked: number;
@@ -1132,31 +1132,31 @@ interface SleeveCrimeTask extends BaseTask {
 }
 
 /** @public */
-interface SleeveFactionTask extends BaseTask {
+export interface SleeveFactionTask extends BaseTask {
   type: "FACTION";
   factionWorkType: FactionWorkType;
   factionName: FactionName;
 }
 
 /** @public */
-interface SleeveInfiltrateTask extends BaseTask {
+export interface SleeveInfiltrateTask extends BaseTask {
   type: "INFILTRATE";
   cyclesWorked: number;
   cyclesNeeded: number;
 }
 
 /** @public */
-interface SleeveRecoveryTask extends BaseTask {
+export interface SleeveRecoveryTask extends BaseTask {
   type: "RECOVERY";
 }
 
 /** @public */
-interface SleeveSupportTask extends BaseTask {
+export interface SleeveSupportTask extends BaseTask {
   type: "SUPPORT";
 }
 
 /** @public */
-interface SleeveSynchroTask extends BaseTask {
+export interface SleeveSynchroTask extends BaseTask {
   type: "SYNCHRO";
 }
 
@@ -1749,7 +1749,7 @@ export interface Stock {
  *
  * @public
  */
-interface BaseTask {
+export interface BaseTask {
   /**
    * This promise resolves when the task completes or is canceled.
    *
@@ -1768,7 +1768,7 @@ interface BaseTask {
  *
  * @public
  */
-interface PlayerBaseTask extends BaseTask {
+export interface PlayerBaseTask extends BaseTask {
   /**
    * The number of game engine cycles has passed since this task started. 1 engine cycle = 200ms.
    */
@@ -1783,7 +1783,7 @@ interface PlayerBaseTask extends BaseTask {
  *
  * @public
  */
-interface StudyTask extends PlayerBaseTask {
+export interface StudyTask extends PlayerBaseTask {
   type: "CLASS";
   classType: string;
   location: LocationName;
@@ -1797,7 +1797,7 @@ interface StudyTask extends PlayerBaseTask {
  *
  * @public
  */
-interface CompanyWorkTask extends PlayerBaseTask {
+export interface CompanyWorkTask extends PlayerBaseTask {
   type: "COMPANY";
   companyName: CompanyName;
 }
@@ -1810,7 +1810,7 @@ interface CompanyWorkTask extends PlayerBaseTask {
  *
  * @public
  */
-interface CreateProgramWorkTask extends PlayerBaseTask {
+export interface CreateProgramWorkTask extends PlayerBaseTask {
   type: "CREATE_PROGRAM";
   programName: ProgramName;
 }
@@ -1823,7 +1823,7 @@ interface CreateProgramWorkTask extends PlayerBaseTask {
  *
  * @public
  */
-interface CrimeTask extends PlayerBaseTask {
+export interface CrimeTask extends PlayerBaseTask {
   type: "CRIME";
   crimeType: CrimeType;
 }
@@ -1836,7 +1836,7 @@ interface CrimeTask extends PlayerBaseTask {
  *
  * @public
  */
-interface FactionWorkTask extends PlayerBaseTask {
+export interface FactionWorkTask extends PlayerBaseTask {
   type: "FACTION";
   factionWorkType: FactionWorkType;
   factionName: FactionName;
@@ -1850,7 +1850,7 @@ interface FactionWorkTask extends PlayerBaseTask {
  *
  * @public
  */
-interface GraftingTask extends PlayerBaseTask {
+export interface GraftingTask extends PlayerBaseTask {
   type: "GRAFTING";
   augmentation: string;
 }
@@ -2927,7 +2927,7 @@ export interface CompanyPositionInfo {
 }
 
 /** @public */
-type HacknetServerHashUpgrade =
+export type HacknetServerHashUpgrade =
   | "Sell for Money"
   | "Sell for Corporation Funds"
   | "Reduce Minimum Security"
@@ -3284,7 +3284,7 @@ export interface Hacknet {
  *
  * @public
  */
-type BladeburnerActionEnumType = {
+export type BladeburnerActionEnumType = {
   General: "General";
   Contract: "Contracts";
   Operation: "Operations";
@@ -3292,14 +3292,14 @@ type BladeburnerActionEnumType = {
 };
 
 /** @public */
-type BladeburnerActionType = _ValueOf<BladeburnerActionEnumType>;
+export type BladeburnerActionType = _ValueOf<BladeburnerActionEnumType>;
 
 /**
  * General action names of Bladeburner
  *
  * @public
  */
-type BladeburnerGeneralActionNameEnumType = {
+export type BladeburnerGeneralActionNameEnumType = {
   Training: "Training";
   FieldAnalysis: "Field Analysis";
   Recruitment: "Recruitment";
@@ -3309,28 +3309,28 @@ type BladeburnerGeneralActionNameEnumType = {
 };
 
 /** @public */
-type BladeburnerGeneralActionName = _ValueOf<BladeburnerGeneralActionNameEnumType>;
+export type BladeburnerGeneralActionName = _ValueOf<BladeburnerGeneralActionNameEnumType>;
 
 /**
  * Contract names of Bladeburner
  *
  * @public
  */
-type BladeburnerContractNameEnumType = {
+export type BladeburnerContractNameEnumType = {
   Tracking: "Tracking";
   BountyHunter: "Bounty Hunter";
   Retirement: "Retirement";
 };
 
 /** @public */
-type BladeburnerContractName = _ValueOf<BladeburnerContractNameEnumType>;
+export type BladeburnerContractName = _ValueOf<BladeburnerContractNameEnumType>;
 
 /**
  * Operation names of Bladeburner
  *
  * @public
  */
-type BladeburnerOperationNameEnumType = {
+export type BladeburnerOperationNameEnumType = {
   Investigation: "Investigation";
   Undercover: "Undercover Operation";
   Sting: "Sting Operation";
@@ -3340,14 +3340,14 @@ type BladeburnerOperationNameEnumType = {
 };
 
 /** @public */
-type BladeburnerOperationName = _ValueOf<BladeburnerOperationNameEnumType>;
+export type BladeburnerOperationName = _ValueOf<BladeburnerOperationNameEnumType>;
 
 /**
  * Black Operation names of Bladeburner
  *
  * @public
  */
-type BladeburnerBlackOpNameEnumType = {
+export type BladeburnerBlackOpNameEnumType = {
   OperationTyphoon: "Operation Typhoon";
   OperationZero: "Operation Zero";
   OperationX: "Operation X";
@@ -3372,14 +3372,14 @@ type BladeburnerBlackOpNameEnumType = {
 };
 
 /** @public */
-type BladeburnerBlackOpName = _ValueOf<BladeburnerBlackOpNameEnumType>;
+export type BladeburnerBlackOpName = _ValueOf<BladeburnerBlackOpNameEnumType>;
 
 /**
  * Skill names type of Bladeburner
  *
  * @public
  */
-type BladeburnerSkillNameEnumType = {
+export type BladeburnerSkillNameEnumType = {
   BladesIntuition: "Blade's Intuition";
   Cloak: "Cloak";
   ShortCircuit: "Short-Circuit";
@@ -3395,7 +3395,7 @@ type BladeburnerSkillNameEnumType = {
 };
 
 /** @public */
-type BladeburnerSkillName = _ValueOf<BladeburnerSkillNameEnumType>;
+export type BladeburnerSkillName = _ValueOf<BladeburnerSkillNameEnumType>;
 
 /**
  * @public
@@ -3411,14 +3411,14 @@ export type BladeburnerActionName =
  *
  * @public
  */
-type SpecialBladeburnerActionEnumTypeForSleeve = {
+export type SpecialBladeburnerActionEnumTypeForSleeve = {
   InfiltrateSynthoids: "Infiltrate Synthoids";
   SupportMainSleeve: "Support main sleeve";
   TakeOnContracts: "Take on contracts";
 };
 
 /** @public */
-type SpecialBladeburnerActionTypeForSleeve = _ValueOf<SpecialBladeburnerActionEnumTypeForSleeve>;
+export type SpecialBladeburnerActionTypeForSleeve = _ValueOf<SpecialBladeburnerActionEnumTypeForSleeve>;
 
 /**
  * @public
@@ -4393,7 +4393,7 @@ export interface Format {
  *
  * @public
  */
-type DarknetResponseCodeType = {
+export type DarknetResponseCodeType = {
   Success: 200;
   DirectConnectionRequired: 351;
   AuthFailure: 401;
@@ -4408,7 +4408,7 @@ type DarknetResponseCodeType = {
 };
 
 /** @public */
-type DarknetResponseCode = _ValueOf<DarknetResponseCodeType>;
+export type DarknetResponseCode = _ValueOf<DarknetResponseCodeType>;
 
 /** @public */
 export type DarknetResult = { success: boolean; code: DarknetResponseCode; message: string };
@@ -4424,7 +4424,7 @@ export type CacheResult = {
  * Details about a darknet server
  * @public
  */
-interface DarknetServerDetails {
+export interface DarknetServerDetails {
   /** True if the server is directly connected to the current server */
   isConnectedToCurrentServer: boolean;
   /** True if the current script has authenticated to this server with the right password using authenticate() or connectToSesssion() */
@@ -4460,7 +4460,7 @@ interface DarknetServerDetails {
  * Options to change the behavior of {@link Darknet.heartbleed | heartbleed} API.
  * @public
  */
-interface HeartbleedOptions {
+export interface HeartbleedOptions {
   /** If true, looks at the most recent log lines but does not remove them. Default is false. */
   peek?: boolean;
   /** The number of log lines to remove from the server. Default is 1. Must be a positive integer. */
@@ -4473,7 +4473,7 @@ interface HeartbleedOptions {
  * Instability of the darknet caused by excessive backdoor-ing of servers.
  * @public
  */
-interface DarknetInstability {
+export interface DarknetInstability {
   /** The increase in time that authentication takes, as a decimal */
   authenticationDurationMultiplier: number;
   /** The chance that authentication will time out instead of resolving, as a decimal */
@@ -5140,7 +5140,7 @@ export interface Gang {
 }
 
 /** @public */
-type GoOpponent =
+export type GoOpponent =
   | "No AI"
   | "Netburners"
   | "Slum Snakes"
@@ -5151,7 +5151,7 @@ type GoOpponent =
   | "????????????";
 
 /** @public */
-type SimpleOpponentStats = {
+export type SimpleOpponentStats = {
   /** Number of wins since last reset */
   wins: number;
   /** Number of losses since last reset*/
@@ -6096,7 +6096,7 @@ export interface Grafting {
  * Skills formulas
  * @public
  */
-interface SkillsFormulas {
+export interface SkillsFormulas {
   /**
    * Calculate skill level.
    * @param exp - experience for that skill
@@ -6114,7 +6114,7 @@ interface SkillsFormulas {
 }
 
 /** @public */
-interface WorkStats {
+export interface WorkStats {
   money: number;
   reputation: number;
   hackExp: number;
@@ -6130,7 +6130,7 @@ interface WorkStats {
  * Work formulas
  * @public
  */
-interface WorkFormulas {
+export interface WorkFormulas {
   crimeSuccessChance(person: Person, crimeType: CrimeType): number;
   /** @returns The WorkStats gained when completing one instance of the specified crime. */
   crimeGains(person: Person, crimeType: CrimeType): WorkStats;
@@ -6148,7 +6148,7 @@ interface WorkFormulas {
  * Reputation formulas
  * @public
  */
-interface ReputationFormulas {
+export interface ReputationFormulas {
   /**
    * Calculate the total required amount of faction reputation to reach a target favor.
    * @param favor - target faction favor.
@@ -6191,7 +6191,7 @@ interface ReputationFormulas {
  * Hacking formulas
  * @public
  */
-interface HackingFormulas {
+export interface HackingFormulas {
   /**
    * Calculate hack chance.
    * (Ex: 0.25 would indicate a 25% chance of success.)
@@ -6308,7 +6308,7 @@ interface HackingFormulas {
  * Hacknet Node formulas
  * @public
  */
-interface HacknetNodesFormulas {
+export interface HacknetNodesFormulas {
   /**
    * Calculate money gain rate.
    * @param level - level of the node.
@@ -6360,7 +6360,7 @@ interface HacknetNodesFormulas {
  * Hacknet Server formulas
  * @public
  */
-interface HacknetServersFormulas {
+export interface HacknetServersFormulas {
   /**
    * Calculate hash gain rate.
    * @param level - level of the server.
@@ -6427,7 +6427,7 @@ interface HacknetServersFormulas {
  * Gang formulas
  * @public
  */
-interface GangFormulas {
+export interface GangFormulas {
   /**
    * Calculate the wanted penalty.
    * @param gang - Gang info from {@link Gang.getGangInformation | getGangInformation}
@@ -6478,7 +6478,7 @@ interface GangFormulas {
  * Bladeburner formulas
  * @public
  */
-interface BladeburnerFormulas {
+export interface BladeburnerFormulas {
   /**
    * Calculate the number of times that you can upgrade a skill.
    *
@@ -6494,7 +6494,7 @@ interface BladeburnerFormulas {
  * Darknet formulas
  * @public
  */
-interface DarknetFormulas {
+export interface DarknetFormulas {
   /**
    * Gets the time it will take to authenticate a server.
    * @param serverDetails - The server to check authentication time on.
@@ -6556,7 +6556,7 @@ export interface Formulas {
 }
 
 /** @public */
-type FragmentEnumType = {
+export type FragmentEnumType = {
   HackingSpeed: 3;
   HackingMoney: 4;
   HackingGrow: 5;
@@ -6576,10 +6576,10 @@ type FragmentEnumType = {
 };
 
 /** @public */
-type FragmentType = _ValueOf<FragmentEnumType>;
+export type FragmentType = _ValueOf<FragmentEnumType>;
 
 /** @public */
-interface Fragment {
+export interface Fragment {
   id: number;
   shape: boolean[][];
   type: FragmentType;
@@ -6589,7 +6589,7 @@ interface Fragment {
 }
 
 /** @public */
-interface ActiveFragment extends Fragment {
+export interface ActiveFragment extends Fragment {
   highestCharge: number;
   numCharge: number;
   rotation: number;
@@ -6616,7 +6616,7 @@ interface ActiveFragment extends Fragment {
  * Stanek's Gift API.
  * @public
  */
-interface Stanek {
+export interface Stanek {
   /**
    * Stanek's Gift width.
    * @remarks
@@ -6728,20 +6728,20 @@ interface Stanek {
 }
 
 /** @public */
-interface InfiltrationReward {
+export interface InfiltrationReward {
   tradeRep: number;
   sellCash: number;
   SoARep: number;
 }
 
 /** @public */
-interface ILocation {
+export interface ILocation {
   city: CityName;
   name: LocationName;
 }
 
 /** @public */
-interface InfiltrationLocation {
+export interface InfiltrationLocation {
   location: ILocation;
   reward: InfiltrationReward;
   difficulty: number;
@@ -6753,7 +6753,7 @@ interface InfiltrationLocation {
  * Infiltration API.
  * @public
  */
-interface Infiltration {
+export interface Infiltration {
   /**
    * Get all locations that can be infiltrated.
    * @remarks
@@ -6776,7 +6776,7 @@ interface Infiltration {
  * User Interface API.
  * @public
  */
-interface UserInterface {
+export interface UserInterface {
   /**
    * Open the tail window of a script.
    *
@@ -9140,7 +9140,7 @@ export interface NS {
 
 // BASE ENUMS
 /** @public */
-type ToastVariantEnumType = {
+export type ToastVariantEnumType = {
   SUCCESS: "success";
   WARNING: "warning";
   ERROR: "error";
@@ -9148,10 +9148,10 @@ type ToastVariantEnumType = {
 };
 
 /** @public */
-type ToastVariant = _ValueOf<ToastVariantEnumType>;
+export type ToastVariant = _ValueOf<ToastVariantEnumType>;
 
 /** @public */
-type CrimeEnumType = {
+export type CrimeEnumType = {
   shoplift: "Shoplift";
   robStore: "Rob Store";
   mug: "Mug";
@@ -9167,20 +9167,20 @@ type CrimeEnumType = {
 };
 
 /** @public */
-type CrimeType = _ValueOf<CrimeEnumType>;
+export type CrimeType = _ValueOf<CrimeEnumType>;
 
 /** @public */
-type FactionWorkEnumType = {
+export type FactionWorkEnumType = {
   hacking: "hacking";
   field: "field";
   security: "security";
 };
 
 /** @public */
-type FactionWorkType = _ValueOf<FactionWorkEnumType>;
+export type FactionWorkType = _ValueOf<FactionWorkEnumType>;
 
 /** @public */
-type UniversityClassEnumType = {
+export type UniversityClassEnumType = {
   computerScience: "Computer Science";
   dataStructures: "Data Structures";
   networks: "Networks";
@@ -9190,10 +9190,10 @@ type UniversityClassEnumType = {
 };
 
 /** @public */
-type UniversityClassType = _ValueOf<UniversityClassEnumType>;
+export type UniversityClassType = _ValueOf<UniversityClassEnumType>;
 
 /** @public */
-type GymEnumType = {
+export type GymEnumType = {
   strength: "str";
   defense: "def";
   dexterity: "dex";
@@ -9201,10 +9201,10 @@ type GymEnumType = {
 };
 
 /** @public */
-type GymType = _ValueOf<GymEnumType>;
+export type GymType = _ValueOf<GymEnumType>;
 
 /** @public */
-type JobNameEnumType = {
+export type JobNameEnumType = {
   software0: "Software Engineering Intern";
   software1: "Junior Software Engineer";
   software2: "Senior Software Engineer";
@@ -9244,10 +9244,10 @@ type JobNameEnumType = {
 };
 
 /** @public */
-type JobName = _ValueOf<JobNameEnumType>;
+export type JobName = _ValueOf<JobNameEnumType>;
 
 /** @public */
-type JobFieldEnumType = {
+export type JobFieldEnumType = {
   software: "Software";
   softwareConsultant: "Software Consultant";
   it: "IT";
@@ -9264,11 +9264,11 @@ type JobFieldEnumType = {
 };
 
 /** @public */
-type JobField = _ValueOf<JobFieldEnumType>;
+export type JobField = _ValueOf<JobFieldEnumType>;
 
 // CORP ENUMS - Changed to types
 /** @public */
-type CorpEmployeePosition =
+export type CorpEmployeePosition =
   | "Operations"
   | "Engineer"
   | "Business"
@@ -9278,7 +9278,7 @@ type CorpEmployeePosition =
   | "Unassigned";
 
 /** @public */
-type CorpIndustryName =
+export type CorpIndustryName =
   | "Water Utilities"
   | "Agriculture"
   | "Fishing"
@@ -9295,14 +9295,14 @@ type CorpIndustryName =
   | "Real Estate";
 
 /** @public */
-type CorpSmartSupplyOption = "leftovers" | "imports" | "none";
+export type CorpSmartSupplyOption = "leftovers" | "imports" | "none";
 
 /**
  * Names of all cities
  *
  * @public
  */
-type CityNameEnumType = {
+export type CityNameEnumType = {
   Aevum: "Aevum";
   Chongqing: "Chongqing";
   Sector12: "Sector-12";
@@ -9312,11 +9312,11 @@ type CityNameEnumType = {
 };
 
 /** @public */
-type CityName = _ValueOf<CityNameEnumType>;
+export type CityName = _ValueOf<CityNameEnumType>;
 
 /** Names of all locations
  * @public */
-type LocationNameEnumType = {
+export type LocationNameEnumType = {
   AevumAeroCorp: "AeroCorp";
   AevumBachmanAndAssociates: "Bachman & Associates";
   AevumClarkeIncorporated: "Clarke Incorporated";
@@ -9384,28 +9384,28 @@ type LocationNameEnumType = {
 };
 
 /** @public */
-type LocationName = _ValueOf<LocationNameEnumType>;
+export type LocationName = _ValueOf<LocationNameEnumType>;
 
 /**
  * Locations of university
  *
  * @public
  */
-type UniversityLocationNameEnumType = {
+export type UniversityLocationNameEnumType = {
   AevumSummitUniversity: LocationNameEnumType["AevumSummitUniversity"];
   Sector12RothmanUniversity: LocationNameEnumType["Sector12RothmanUniversity"];
   VolhavenZBInstituteOfTechnology: LocationNameEnumType["VolhavenZBInstituteOfTechnology"];
 };
 
 /** @public */
-type UniversityLocationName = _ValueOf<UniversityLocationNameEnumType>;
+export type UniversityLocationName = _ValueOf<UniversityLocationNameEnumType>;
 
 /**
  * Locations of gym
  *
  * @public
  */
-type GymLocationNameEnumType = {
+export type GymLocationNameEnumType = {
   AevumCrushFitnessGym: LocationNameEnumType["AevumCrushFitnessGym"];
   AevumSnapFitnessGym: LocationNameEnumType["AevumSnapFitnessGym"];
   Sector12IronGym: LocationNameEnumType["Sector12IronGym"];
@@ -9414,11 +9414,11 @@ type GymLocationNameEnumType = {
 };
 
 /** @public */
-type GymLocationName = _ValueOf<GymLocationNameEnumType>;
+export type GymLocationName = _ValueOf<GymLocationNameEnumType>;
 
 /** Names of all companies
  * @public */
-type CompanyNameEnumType = {
+export type CompanyNameEnumType = {
   ECorp: "ECorp";
   MegaCorp: "MegaCorp";
   BachmanAndAssociates: "Bachman & Associates";
@@ -9460,7 +9460,7 @@ type CompanyNameEnumType = {
 };
 
 /** @public */
-type CompanyName = _ValueOf<CompanyNameEnumType>;
+export type CompanyName = _ValueOf<CompanyNameEnumType>;
 
 /**
  * Names of all factions.
@@ -9469,7 +9469,7 @@ type CompanyName = _ValueOf<CompanyNameEnumType>;
  * factions are, you should not check this enum. Some factions are only accessible in the endgame.
  *
  * @public */
-type FactionNameEnumType = {
+export type FactionNameEnumType = {
   Illuminati: "Illuminati";
   Daedalus: "Daedalus";
   TheCovenant: "The Covenant";
@@ -9507,10 +9507,10 @@ type FactionNameEnumType = {
 };
 
 /** @public */
-type FactionName = _ValueOf<FactionNameEnumType>;
+export type FactionName = _ValueOf<FactionNameEnumType>;
 
 /** @public */
-type ProgramNameEnumType = {
+export type ProgramNameEnumType = {
   nuke: "NUKE.exe";
   bruteSsh: "BruteSSH.exe";
   ftpCrack: "FTPCrack.exe";
@@ -9529,10 +9529,10 @@ type ProgramNameEnumType = {
 };
 
 /** @public */
-type ProgramName = _ValueOf<ProgramNameEnumType>;
+export type ProgramName = _ValueOf<ProgramNameEnumType>;
 
 /** @public */
-type CodingContractNameEnumType = {
+export type CodingContractNameEnumType = {
   FindLargestPrimeFactor: "Find Largest Prime Factor";
   SubarrayWithMaximumSum: "Subarray with Maximum Sum";
   TotalWaysToSum: "Total Ways to Sum";
@@ -9566,7 +9566,7 @@ type CodingContractNameEnumType = {
 };
 
 /** @public */
-type CodingContractName = _ValueOf<CodingContractNameEnumType>;
+export type CodingContractName = _ValueOf<CodingContractNameEnumType>;
 
 /** @public */
 export type CodingContractSignatures = {
@@ -9615,7 +9615,7 @@ export type CodingContractObject = {
 }[keyof CodingContractSignatures];
 
 /** @public */
-type NSEnums = {
+export type NSEnums = {
   CityName: CityNameEnumType;
   CrimeType: CrimeEnumType;
   FactionWorkType: FactionWorkEnumType;
@@ -10162,7 +10162,7 @@ export interface WarehouseAPI {
 /**
  * @public
  */
-type CreatingCorporationCheckResultEnumType = {
+export type CreatingCorporationCheckResultEnumType = {
   Success: "Success";
   NoSf3OrDisabled: "NoSf3OrDisabled";
   CorporationExists: "CorporationExists";
@@ -10171,7 +10171,7 @@ type CreatingCorporationCheckResultEnumType = {
 };
 
 /** @public */
-type CreatingCorporationCheckResult = _ValueOf<CreatingCorporationCheckResultEnumType>;
+export type CreatingCorporationCheckResult = _ValueOf<CreatingCorporationCheckResultEnumType>;
 
 /**
  * Corporation API
@@ -10499,7 +10499,7 @@ export interface Corporation extends WarehouseAPI, OfficeAPI {
 
 /** Product rating information
  *  @public */
-interface CorpProductData {
+export interface CorpProductData {
   /** Name of the product */
   name: string;
   /** Verb used to describe creation of the product */
@@ -10519,7 +10519,7 @@ interface CorpProductData {
 
 /** Data for an individual industry
  *  @public */
-interface CorpIndustryData {
+export interface CorpIndustryData {
   startingCost: number;
   description: string;
   product?: CorpProductData;
@@ -10549,7 +10549,7 @@ interface CorpIndustryData {
  * General info about a corporation
  * @public
  */
-interface CorporationInfo {
+export interface CorporationInfo {
   /** Name of the corporation */
   name: string;
   /** Funds available */
@@ -10602,7 +10602,7 @@ interface CorporationInfo {
  * Corporation related constants
  * @public
  */
-interface CorpConstants {
+export interface CorpConstants {
   /** Names of all corporation game states */
   stateNames: CorpStateName[];
   /** Names of all employee positions */
@@ -10653,10 +10653,10 @@ interface CorpConstants {
   smartSupplyOptions: CorpSmartSupplyOption[];
 }
 /** @public */
-type CorpStateName = "START" | "PURCHASE" | "PRODUCTION" | "EXPORT" | "SALE";
+export type CorpStateName = "START" | "PURCHASE" | "PRODUCTION" | "EXPORT" | "SALE";
 
 /** @public */
-type CorpMaterialName =
+export type CorpMaterialName =
   | "Minerals"
   | "Ore"
   | "Water"
@@ -10671,7 +10671,7 @@ type CorpMaterialName =
   | "Real Estate";
 
 /** @public */
-type CorpUnlockName =
+export type CorpUnlockName =
   | "Export"
   | "Smart Supply"
   | "Market Research - Demand"
@@ -10682,7 +10682,7 @@ type CorpUnlockName =
   | "Office API";
 
 /** @public */
-type CorpUpgradeName =
+export type CorpUpgradeName =
   | "Smart Factories"
   | "Smart Storage"
   | "Wilson Analytics"
@@ -10694,7 +10694,7 @@ type CorpUpgradeName =
   | "Project Insight";
 
 /** @public */
-type CorpResearchName =
+export type CorpResearchName =
   | "Hi-Tech R&D Laboratory"
   | "AutoBrew"
   | "AutoPartyManager"
@@ -10720,7 +10720,7 @@ type CorpResearchName =
  * Corporation material information
  * @public
  */
-interface CorpMaterialConstantData {
+export interface CorpMaterialConstantData {
   /** Name of the material */
   name: CorpMaterialName;
   /** Size of the material */
@@ -10739,7 +10739,7 @@ interface CorpMaterialConstantData {
  * Corporation industry information
  * @public
  */
-interface IndustryData {
+export interface IndustryData {
   /** Industry type */
   type: CorpIndustryName;
   /** Cost to make a new division of this industry type */
@@ -10760,7 +10760,7 @@ interface IndustryData {
  * Product in a warehouse
  * @public
  */
-interface Product {
+export interface Product {
   /** Name of the product */
   name: string;
   /** Demand for the product, only present if "Market Research - Demand" unlocked */
@@ -10808,7 +10808,7 @@ interface Product {
  * Material in a warehouse
  * @public
  */
-interface Material {
+export interface Material {
   /** Name of the material */
   name: CorpMaterialName;
   /** Amount of material  */
@@ -10843,7 +10843,7 @@ interface Material {
  * Export order for a material
  * @public
  */
-interface Export {
+export interface Export {
   /** Division the material is being exported to */
   division: string;
   /** City the material is being exported to */
@@ -10856,7 +10856,7 @@ interface Export {
  * Warehouse for a division in a city
  * @public
  */
-interface Warehouse {
+export interface Warehouse {
   /** Amount of size upgrade bought */
   level: number;
   /** City in which the warehouse is located */
@@ -10900,7 +10900,7 @@ export interface Office {
  * Corporation division
  * @public
  */
-interface Division {
+export interface Division {
   /** Name of the division */
   name: string;
   /** Industry of division, like Agriculture */
@@ -10937,7 +10937,7 @@ interface Division {
  * Corporation investment offer
  * @public
  */
-interface InvestmentOffer {
+export interface InvestmentOffer {
   /** Amount of funds you will get from this investment */
   funds: number;
   /** Amount of share you will give in exchange for this investment */
@@ -10950,7 +10950,7 @@ interface InvestmentOffer {
  * Interface Theme
  * @public
  */
-interface UserInterfaceTheme {
+export interface UserInterfaceTheme {
   primarylight: string;
   primary: string;
   primarydark: string;
@@ -10995,7 +10995,7 @@ interface UserInterfaceTheme {
  * Interface Styles
  * @public
  */
-interface IStyleSettings {
+export interface IStyleSettings {
   fontFamily: string;
   fontSize: number;
   tailFontSize: number;
@@ -11006,7 +11006,7 @@ interface IStyleSettings {
  * Game Information
  * @public
  */
-interface GameInfo {
+export interface GameInfo {
   /**
    * Version as shown in release notes and in the UI. E.g.: "2.8.1"
    *
@@ -11025,7 +11025,7 @@ interface GameInfo {
  * Used for autocompletion
  * @public
  */
-interface AutocompleteData {
+export interface AutocompleteData {
   /**
    * All server hostnames.
    *
@@ -11060,7 +11060,7 @@ interface AutocompleteData {
  * Player must have at least this much money.
  * @public
  */
-interface MoneyRequirement {
+export interface MoneyRequirement {
   type: "money";
   money: number;
 }
@@ -11068,7 +11068,7 @@ interface MoneyRequirement {
  * Player must have each listed skill at least this level.
  * @public
  */
-interface SkillRequirement {
+export interface SkillRequirement {
   type: "skills";
   skills: Partial<Skills>;
 }
@@ -11076,7 +11076,7 @@ interface SkillRequirement {
  * Player must have less than this much karma.
  * @public
  */
-interface KarmaRequirement {
+export interface KarmaRequirement {
   type: "karma";
   karma: number;
 }
@@ -11084,7 +11084,7 @@ interface KarmaRequirement {
  * Player must have killed at least this many people.
  * @public
  */
-interface PeopleKilledRequirement {
+export interface PeopleKilledRequirement {
   type: "numPeopleKilled";
   numPeopleKilled: number;
 }
@@ -11092,7 +11092,7 @@ interface PeopleKilledRequirement {
  * Player must have a specific Literature or Message file on their home computer.
  * @public
  */
-interface FileRequirement {
+export interface FileRequirement {
   type: "file";
   file: string;
 }
@@ -11101,7 +11101,7 @@ interface FileRequirement {
  * Player must have no augmentations installed (if zero).
  * @public
  */
-interface NumAugmentationsRequirement {
+export interface NumAugmentationsRequirement {
   type: "numAugmentations";
   numAugmentations: number;
 }
@@ -11109,7 +11109,7 @@ interface NumAugmentationsRequirement {
  * Player must be working for this company.
  * @public
  */
-interface EmployedByRequirement {
+export interface EmployedByRequirement {
   type: "employedBy";
   company: CompanyName;
 }
@@ -11117,7 +11117,7 @@ interface EmployedByRequirement {
  * Player must have at least this much reputation with this company.
  * @public
  */
-interface CompanyReputationRequirement {
+export interface CompanyReputationRequirement {
   type: "companyReputation";
   company: CompanyName;
   reputation: number;
@@ -11126,7 +11126,7 @@ interface CompanyReputationRequirement {
  * Player must have this job title at some company.
  * @public
  */
-interface JobTitleRequirement {
+export interface JobTitleRequirement {
   type: "jobTitle";
   jobTitle: JobName;
 }
@@ -11134,7 +11134,7 @@ interface JobTitleRequirement {
  * Player must be located in this city.
  * @public
  */
-interface CityRequirement {
+export interface CityRequirement {
   type: "city";
   city: CityName;
 }
@@ -11142,7 +11142,7 @@ interface CityRequirement {
  * Player must be at this location within a city.
  * @public
  */
-interface LocationRequirement {
+export interface LocationRequirement {
   type: "location";
   location: LocationName;
 }
@@ -11150,7 +11150,7 @@ interface LocationRequirement {
  * Player must have installed a backdoor on this server.
  * @public
  */
-interface BackdoorRequirement {
+export interface BackdoorRequirement {
   type: "backdoorInstalled";
   server: string;
 }
@@ -11158,7 +11158,7 @@ interface BackdoorRequirement {
  * Player's Hacknet devices must have at least this much total RAM.
  * @public
  */
-interface HacknetRAMRequirement {
+export interface HacknetRAMRequirement {
   type: "hacknetRAM";
   hacknetRAM: number;
 }
@@ -11166,7 +11166,7 @@ interface HacknetRAMRequirement {
  * Player's Hacknet devices must have at least this many total cores.
  * @public
  */
-interface HacknetCoresRequirement {
+export interface HacknetCoresRequirement {
   type: "hacknetCores";
   hacknetCores: number;
 }
@@ -11174,7 +11174,7 @@ interface HacknetCoresRequirement {
  * Player's Hacknet devices must have at least this many total levels.
  * @public
  */
-interface HacknetLevelsRequirement {
+export interface HacknetLevelsRequirement {
   type: "hacknetLevels";
   hacknetLevels: number;
 }
@@ -11182,7 +11182,7 @@ interface HacknetLevelsRequirement {
  * Player must be located in this BitNode.
  * @public
  */
-interface BitNodeRequirement {
+export interface BitNodeRequirement {
   type: "bitNodeN";
   bitNodeN: number;
 }
@@ -11190,7 +11190,7 @@ interface BitNodeRequirement {
  * Player must have this Source File.
  * @public
  */
-interface SourceFileRequirement {
+export interface SourceFileRequirement {
   type: "sourceFile";
   sourceFile: number;
 }
@@ -11198,7 +11198,7 @@ interface SourceFileRequirement {
  * Player must have at least this rank in the Bladeburner Division.
  * @public
  */
-interface BladeburnerRankRequirement {
+export interface BladeburnerRankRequirement {
   type: "bladeburnerRank";
   bladeburnerRank: number;
 }
@@ -11206,7 +11206,7 @@ interface BladeburnerRankRequirement {
  * Player must have completed this many infiltrations.
  * @public
  */
-interface NumInfiltrationsRequirement {
+export interface NumInfiltrationsRequirement {
   type: "numInfiltrations";
   numInfiltrations: number;
 }
@@ -11214,7 +11214,7 @@ interface NumInfiltrationsRequirement {
  * The sub-condition must not be satisfied.
  * @public
  */
-interface NotRequirement {
+export interface NotRequirement {
   type: "not";
   condition: PlayerRequirement;
 }
@@ -11222,7 +11222,7 @@ interface NotRequirement {
  * At least one sub-condition must be satisfied.
  * @public
  */
-interface SomeRequirement {
+export interface SomeRequirement {
   type: "someCondition";
   conditions: PlayerRequirement[];
 }
@@ -11230,7 +11230,7 @@ interface SomeRequirement {
  * All sub-conditions must be satisfied.
  * @public
  */
-interface EveryRequirement {
+export interface EveryRequirement {
   type: "everyCondition";
   conditions: PlayerRequirement[];
 }
@@ -11267,4 +11267,3 @@ export type PlayerRequirement =
   | NotRequirement
   | SomeRequirement
   | EveryRequirement;
-
