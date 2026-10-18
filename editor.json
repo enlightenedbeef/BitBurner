@@ -1,0 +1,31 @@
+{
+  "base": "vs-dark",
+  "inherit": true,
+  "common": {
+    "accent": "f5c2e7",
+    "bg": "181825",
+    "fg": "cdd6f4"
+  },
+  "syntax": {
+    "tag": "f5c2e7",
+    "entity": "89b4fa",
+    "string": "f9e2af",
+    "regexp": "cba6f7",
+    "markup": "89b4fa",
+    "keyword": "f5c2e7",
+    "comment": "6c7086",
+    "constant": "94e2d5",
+    "error": "f38ba8"
+  },
+  "ui": {
+    "line": "181825",
+    "panel": {
+      "bg": "11111b",
+      "selected": "313244",
+      "border": "313244"
+    },
+    "selection": {
+      "bg": "f5c2e74D"
+    }
+  }
+}
