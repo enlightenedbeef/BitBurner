@@ -23,13 +23,13 @@
 [this is a header link](#heading-2)
 
 <!-- links to outside file -->
-[this is a file link](/old/bitch.txt)
+[this is a file link](./bitch.txt)
 
 ### References
 
 [god is dead][1]
 
-[1]:ada.com "see i told you so"
+[1]:https://www.bay12games.com/dwarves/ "see i told you so"
 
 ## Text Formatting
 
