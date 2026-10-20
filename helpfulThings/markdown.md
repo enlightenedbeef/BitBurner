@@ -9,35 +9,43 @@
 ##### Heading 5
 
 ###### Heading 6
+
 <!-- headers/folders -->
+
 ## Links
+
 <!-- linked text -->
+
 [This is a link (markdown guide)](https://www.markdownguide.org/basic-syntax/)
 
 <!-- this is image -->
+
 ![This is an image](https://preview.redd.it/awum17t6uw381.jpg?auto=webp&s=c460ed11ac0ea66cc333c7e51c87942b78d390b6)
 
 [![This is an image](https://preview.redd.it/awum17t6uw381.jpg?auto=webp&s=c460ed11ac0ea66cc333c7e51c87942b78d390b6)](https://www.google.com)
 
 <!-- links to other bit of this file -->
+
 [this is a header link](#heading-2)
 
 <!-- links to outside file -->
+
 [this is a file link](./bitch.txt)
 
 ### References
 
 [god is dead][1]
 
-[1]:https://www.bay12games.com/dwarves/ "see i told you so"
+[1]: https://www.bay12games.com/dwarves/ "see i told you so"
 
 ## Text Formatting
 
 ### Line Breaks
 
-<!-- add two spacesat end of line  -->
+<!-- add two spaces at end of line  -->
+
 I just need a sentence brother.
-Here is your sentence brothor.
+Here is your sentence brother.
 
 If i want a linebreak after a sentence.  
 I use two spaces at the end of the line.
@@ -45,22 +53,28 @@ I use two spaces at the end of the line.
 Or if I start a new paragraph, i leave an empty line between them.
 
 <!-- *Italics* -->
-`*Italics*:` *Italics*
+
+`*Italics*:` _Italics_
+
 <!-- *Italics* -->
+
 `**Bold**:` **Bold**
+
 <!--  -->
-`***WOMBO***` ***COMBO***
+
+`***WOMBO***` **_COMBO_**
 
 `~~strikethrough~~` ~~strikethrough~~
 
 <!-- |Table| -->
+
 | left column | middle column | right column |
-| -: | :-: | :- |
-| Left Data | Middle Data | Right Data |
-| Left Data | Middle Data | Right Data |
-| Left Data | Middle Data | Right Data |
-| Left Data | Middle Data | Right Data |
-| Left Data | Middle Data | Right Data |
+| ----------: | :-----------: | :----------- |
+|   Left Data |  Middle Data  | Right Data   |
+|   Left Data |  Middle Data  | Right Data   |
+|   Left Data |  Middle Data  | Right Data   |
+|   Left Data |  Middle Data  | Right Data   |
+|   Left Data |  Middle Data  | Right Data   |
 
 ## `<HTML Tags>`
 
@@ -86,7 +100,7 @@ Or if I start a new paragraph, i leave an empty line between them.
 
 #### Multi Line
 
-> ##### fuck  
+> ##### fuck
 >
 > ## but more
 
@@ -129,8 +143,8 @@ http://www.example.com
 ### Mixed Lists
 
 1. abc
-    - 123
-    1. 123 (not always viable)
+   - 123
+   1. 123 (not always viable)
 2. def
 
 ## Page Formatting
