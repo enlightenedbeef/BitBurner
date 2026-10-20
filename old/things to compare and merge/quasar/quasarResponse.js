@@ -18,5 +18,4 @@ export function Response(quote) {
 // }
 
 // export function LinesList() {
-  
 // }
