@@ -4,5 +4,6 @@
         "Netscript",
         "tprint",
         "tprintf"
-    ]
+    ],
+    "markdown.validate.enabled": true
 }

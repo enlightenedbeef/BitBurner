@@ -1,7 +1,9 @@
-# [Title Goes here](../lyf/)
+# [Title Goes here](../lyf)
 
 ## Excersizes
 
 ## Notes
 
 ## Other
+
+<!-- Shadu is watching.... -->

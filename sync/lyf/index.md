@@ -1,91 +1,149 @@
-# [Index of Lyf](../lyf/)
+# Learn you some JavaScript for fun
 
-1. ## [Hello, world](../lyf/1.%20Hello,%20World/notes.md)
+A tutorial on learning to program in JavaScript. We will use the game Bitburner as a vehicle for learning. The game is available [online](https://bitburner-official.github.io/) and through [Steam](https://store.steampowered.com/app/1812820/Bitburner/) .
 
-   1. ### [Bitburner](../lyf/1.%20Hello,%20World/1.%20Bitburner/)
+[[TOC]]
 
-   2. ### [Your first program](../lyf/1.%20Hello,%20World/2.%20Your%20first%20program/notes.md)
+<!--  Content  -->
+
+## Hello, world
+
+   This tutorial will help you learn computer programming. We will use JavaScript as the programming language and the game Bitburner as the learning environment. Why JavaScript? Why not Python? Or C, C++, Java, Ruby, or some other language? I find JavaScript to be reasonably easy to learn. Python is also easy to learn. However, I have not been able to find a programming game that encourages its players to write, say, Python or Ruby code. Let me know if you encounter such a game for Python or Ruby or another language. The game [ByteLegend](https://github.com/ByteLegend/ByteLegend) encourages its players to write Java code. If you prefer Java, give ByteLegend a go.
+
+   Why Bitburner? The game encourages you to write JavaScript code, not in a programming language specifically designed for the game. Isn’t that the same purpose as [Screeps](https://store.steampowered.com/app/464350/Screeps_World/) and [Untrusted](https://alexnisnevich.github.io/untrusted/)? Yes. I have spent much more time with Bitburner than I have with Screeps or Untrusted. By all means use Screeps and/or Untrusted to learn JavaScript if you are so inclined. Bitburner offers plenty of challenges for novice and seasoned programmers. It is possible to write JavaScript programs that can automate the whole game for you. Any discussion about how to play Bitburner is incidental to our main goal: use the game to learn how to program in JavaScript.
+
+### Bitburner
+
+   Familiarize yourself with the Bitburner environment. Open the game in [Steam](https://store.steampowered.com/app/1812820/Bitburner/) or use the online version. You should see something similar to the left panel of the image below. The game places you at the in-game tutorial. Continue with the tutorial if you want. Otherwise click the button <kbd>SKIP TUTORIAL</kbd> and you should see something like the right panel of the image below. This is the terminal window of the game. The terminal window, abbreviated as terminal, is an area of the game that allows you to type in various commands to play the game. You know you are at the terminal because the <kbd>Terminal</kbd> tab is highlighted green. Spend some time exploring the other tabs. When you are done, click on the <kbd>Terminal</kbd> tab to return to the terminal. Note the Overview window at the top-right corner. Click on the arrow to minimize or maximize the window.
+
+   <figure>
+    <img src="https://raw.githubusercontent.com/quacksouls/lyf/main/assets/img/hello/interface.png" alt="Bitburner Interface">
+    <figcaption>Bitburner Interface</figcaption>
+   </figure>
+
+   Exercise 3. The [online tutorial](https://github.com/bitburner-official/bitburner-src/blob/stable/src/Documentation/doc/help/getting_started.md) elaborates on the in-game tutorial. Work through the online tutorial for an in-depth introduction to Bitburner.
+
+### Your first program
+
+   When learning a programming language, the traditional first program you write is called the `Hello, world` program. At the terminal, type `nano hello.js` as shown in the left panel of the image below and press <kbd>Enter</kbd>. The command `nano` launches an editor in which you can write your JavaScript code. The argument `hello.js` given to `nano` tells the command to open the code editor and create a template file named `hello.js`. The command uses the file extension .js to figure out that you want to create a JavaScript program. The code editor is shown in the right panel of the image below. If you have not done so, explore other tabs and familiarize yourself with the game’s interface. When you are ready to code, click on the tab <kbd>Script Editor</kbd> (or press the key combination <kbd>Alt</kbd> + <kbd>e</kbd>) to return to the code editor.
+
+   <figure>
+      <img src="https://raw.githubusercontent.com/quacksouls/lyf/main/assets/img/hello/hello.png" alt="Hello, world!">
+      <figcaption>Hello, World</figcaption>
+   </figure>
+
+   Copy and paste the following program into the code editor:
+
+   [`hello.js`](https://github.com/quacksouls/lyf/blob/main/assets/src/hello/hello.js)
+
+   ```js
+   /** @param {NS} ns */
+   export async function main(ns) {
+      ns.tprint("Hello, world!");
+   }
+   ```
+   Click on the button <kbd>Save</kbd> (or press the key combination <kbd>Ctrl</kbd> + <kbd>s</kbd>) to save the content of the script. Click on the <kbd>Terminal</kbd> tab (or press the key combination <kbd>Alt</kbd> + <kbd>t</kbd>) to return to the terminal. At the terminal, type the command run hello.js and press <kbd>Enter</kbd> to run your first JavaScript program. The result is shown in the following image. You should see the text Hello, world! printed to the terminal.
+
+   <figure>
+      <img src="https://raw.githubusercontent.com/quacksouls/lyf/main/assets/img/hello/run-hello.png" alt="Run, hello, run">
+      <figcaption>Run, hello, run</figcaption>
+   </figure>
+
+#### Excercises
+
+   **Exercise 1.** The terminal is the area of Bitburner that allows you to enter commands and run scripts. Read more about the terminal [here](https://github.com/bitburner-official/bitburner-src/blob/stable/src/Documentation/doc/basic/terminal.md).
+
+   **Exercise 2.** The terminal accepts a number of commands. You have been using the command run. From the terminal, enter the command `help` to find out more about other commands you can enter from the terminal. Do not worry if you find the information incomprehensible.
+
+   **Exercise 3.** The terminal command `help` allows you to find out more information about a command. You might not always remember how to use the command `run`. Execute the command `help` run at the terminal to refresh your memory.
+
+   <!-- **Exercise 4.** Might I interest you in a feline companion? Why not `buy cat` from the comfort of your terminal?
+
+   **Exercise 5.** What is that meowing you hear in the distance? Oh no, it is a tabby stuck in a cat flap. Feel free to `help cat` whenever you are ready. 
    
-   3. ### [Any comments?](../lyf/1.%20Hello,%20World/3.%20Any%20Comments?/notes.md)
-   
-   4. ### [The function main()](../lyf/1.%20Hello,%20World/4.%20The%20function%20main()/notes.md)
+   These commands no longer exist in-game -->
 
-2. ## [Data, darta, dayta](../lyf/2.%20Data,%20darta,%20dayta/notes.md)
+### Any comments?
 
-   1. ### [Pick a Number](../lyf/2.%20Data,%20darta,%20dayta/1.%20Pick%20a%20number/notes.md)
+### The function main()
 
-   2. ### [String me along](../lyf/2.%20Data,%20darta,%20dayta/2.%20String%20me%20along/notes.md)
+## Data, darta, dayta
 
-   3. ### [Smooth operator](../lyf/2.%20Data,%20darta,%20dayta/3.%20Smooth%20operator/notes.md)
+### Pick a Number
 
-   4. ### [Bool-urns](../lyf/2.%20Data,%20darta,%20dayta/4.%20Bool-urns/notes.md)
+### String me along
 
-   5. ### [Compare the pair](../lyf/2.%20Data,%20darta,%20dayta/5.%20Compare%20the%20pair/notes.md)
+### Smooth operator
 
-3. ## [Decision, decision](../lyf/3.%20Decision,%20decision/notes.md)
+### Bool-urns
 
-   1. ### [I can't decide](../lyf/3.%20Decision,%20decision/1.%20I%20can't%20decide/notes.md)
+### Compare the pair
 
-   2. ###  [So many choices](../lyf/3.%20Decision,%20decision/2.%20So%20many%20choices/notes.md)
+## Decision, decision
 
-   3. ### [Can you repeat that?](../lyf/3.%20Decision,%20decision/3.%20Can't%20you%20repeat%20that?/notes.md)
+### I can't decide
 
-4. ## [Put that in a function](../lyf/4.%20Put%20that%20in%20a%20function/notes.md)
+###  So many choices
 
-   1. ### [I declare](../lyf/4.%20Put%20that%20in%20a%20function/1.%20I%20declare/notes.md)
+### Can you repeat that?
 
-   2. ### [Bow and arrow](../lyf/4.%20Put%20that%20in%20a%20function/2.%20Bow%20and%20arrow/notes.md)
+## Put that in a function
 
-   3. ### [First-class function](../lyf/4.%20Put%20that%20in%20a%20function/3.%20First-class%20function/notes.md)
+### I declare
 
-   4. ### [Import and export](../lyf/4.%20Put%20that%20in%20a%20function/4.%20Import%20and%20export/notes.md)
+### Bow and arrow
 
-5. ## [Organise your data](../lyf/5.%20Organize%20your%20data/notes.md)
+### First-class function
 
-   1. ### [Line them up](../lyf/5.%20Organize%20your%20data/1.%20Line%20them%20up/notes.md)
+### Import and export
 
-   2. ### [No duplicates](../lyf/5.%20Organize%20your%20data/2.%20No%20duplicates/notes.md)
+## Organise your data
 
-   3. ### [Check the dictionary](../lyf/3.%20Decision,%20decision/3.%20Can't%20you%20repeat%20that?/notes.md)
+### Line them up
 
-6. ## [JSON and the Argonauts](../lyf/6.%20JSON%20and%20the%20Argonauts/notes.md)
+### No duplicates
 
-   1. ### [Objects and arguments](../lyf/6.%20JSON%20and%20the%20Argonauts/notes.md)
+### Check the dictionary
 
-   2. ### [Objects and I/O](../lyf/6.%20JSON%20and%20the%20Argonauts/2.%20Obbjects%20and%20IO/notes.md)
+## JSON and the Argonauts
 
-   3. ### [Class of its own](../lyf/6.%20JSON%20and%20the%20Argonauts/3.%20Class%20of%20its%20own./notes.md)
+### Objects and arguments
 
-7. ## [Let's get functional](../lyf/7.%20Let's%20get%20functional/notes.md)
+### Objects and I/O
 
-   1. ### [filter](../lyf/7.%20Let's%20get%20functional/notes.md)
+### Class of its own
 
-   2. ### [map](../lyf/7.%20Let's%20get%20functional/2.%20map/notes.md)
+## Let's get functional
 
-   3. ### [reduce](../lyf/7.%20Let's%20get%20functional/3.%20reduce/notes.md)
+### filter
 
-8. ## [Ooey Gooey](../lyf/8.%20Ooey%20Gooey/notes.md)
+### map
 
-   1. ### [Dialog box](../lyf/8.%20Ooey%20Gooey/1.%20Dialog%20box/notes.md)
+### reduce
 
-   2. ### [Am I pretty?](../lyf/8.%20Ooey%20Gooey/2.%20Am%20I%20Pretty?/notes.md)
+## Ooey Gooey
 
-   3. ### [CSS](../lyf/8.%20Ooey%20Gooey/3.%20CSS/notes.md)
+### Dialog box
 
-   4. ### [HTML and Javascript](../lyf/8.%20Ooey%20Gooey/4.%20HTML%20and%20JS/notes.md)
+### Am I pretty?
 
-   5. ### [Exercises](../lyf/8.%20Ooey%20Gooey/5.%20Exercises/notes.md)
+### CSS
 
-9. ## [Wait, there's more](../lyf/9.%20Wait,%20there's%20more/notes.md)
+### HTML and Javascript
 
-   1. ### [Resources](../lyf/9.%20Wait,%20there's%20more/notes.md#resources)
+### Exercises
 
-   2. ### [Algorithms & Functions](../lyf/9.%20Wait,%20there's%20more/notes.md#algorithms-&-functions)
+## Wait, there's more
 
-   3. ### [Functional Programming](../lyf/9.%20Wait,%20there's%20more/notes.md#functional-programming)
+### Resources
 
-10. ## [Future Content Goes Here](../lyf/10.%20Future%20Content%20Goes%20Here/notes.md)
+### Algorithms & Functions
 
-    1. ### [To be expanded upon.](../lyf/10.%20Future%20Content%20Goes%20Here/#to-be-expanded-upon)
+### Functional Programming
 
-11. ## [Old](../lyf/11.%20old/)
+## Future Content Goes Here
+
+### To be expanded upon.
+
+## Old
+
